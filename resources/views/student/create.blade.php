@@ -26,17 +26,19 @@
             <br>
             <div class="row">
                 <div class="col-md-6">
-                    @include('includes.messages')
+                    {{-- @include('includes.messages') --}}
                     <form action="{{url('student/store')}}" method="POST">
                         {{ csrf_field() }}
-                        <div class="form-group">
+                        <div class="form-group" {{ $errors->has('studname') ? 'has-error' : ''}}>
                             <label for="name">Student Name</label>
                             <input type="text" class="form-control" id="studname" name="studname"
-                                placeholder="Enter Student Name">
+                        placeholder="Enter Student Name" value="{{old('studname')}}" autofocus>
+                                {!! $errors->first('studname', '<p style="color: red">:message</p>') !!}
                         </div>
-                        <div class="form-group">
+                        <div class="form-group" {{ $errors->has('amount') ? 'has-error' : ''}}>
                             <label for="amount">Amount paid</label>
-                            <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount">
+                            <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount" value="{{old('amount')}}" maxlength="4">
+                            {!! $errors->first('amount', '<p style="color: red">:message</p>') !!}
                         </div>
                         <button type="submit" class="btn btn-primary">Save</button>
                     </form>
