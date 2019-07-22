@@ -38,18 +38,20 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name'=>'required',
-            'amount'=>'required',
+            'studname' => 'required',
+            'amount' => 'required',
         ]);
-        $student=new Student;
 
-        $student->name=$request->studname;
-        $student->amount=$request->amount;
-        $student->created_at=date('Y-m-d');
-        $student->updated_at=date('Y-m-d');
+        $student = new Student;
+
+        $student->name = $request->studname;
+        $student->amount = $request->amount;
+        // $student->created_at = date('Y-m-d');
+        // $student->updated_at = date('Y-m-d');
         $student->save();
 
-        return redirect(route('student.create'));
+        // return redirect(route('student.create'));
+        return back()->with('success','Student Created!');
     }
 
     /**
@@ -115,8 +117,8 @@ class StudentController extends Controller
     {
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($this->convert_student_info_to_html());
-        $filename='Student Information';
-        return $pdf->stream($filename .'.pdf');
+        $filename = 'Student Information';
+        return $pdf->stream($filename . '.pdf');
     }
 
     public function convert_student_info_to_html()
