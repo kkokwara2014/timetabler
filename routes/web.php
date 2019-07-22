@@ -16,4 +16,6 @@
 // });
 
 Route::get('/','DynamicpdfController@index');
-Route::get('/dynamic_pdf/pdf','DynamicpdfController@index');
+
+
+Route::resource('students','StudentController');
