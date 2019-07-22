@@ -21,9 +21,14 @@
     </head>
 
     <body>
+
         <div class="container">
+            <br>
+            <a href="{{url('student/pdfversion')}}" target="_blank" class="btn btn-danger">Convert to PDF</a>
+            
             <div class="table-responsive">
-                <table class="table">
+                <table class="table table-bordered table-striped table-responsive">
+                    <caption><h2 style="text-align: center">Student Information</h2></caption>
                     <thead>
                         <tr>
                             <th scope="col">#</th>
@@ -41,7 +46,7 @@
                             <td>{{$stud->id}}</td>
                             <td>{{$stud->name}}</td>
                             <td>{{$stud->amount}}</td>
-                            <td><a href="{{url('student/pdfexport/'.$stud->id)}}" class="badge badge-info">PDF
+                            <td><a href="{{url('student/pdfexport/'.$stud->id)}}" target="_blank" class="badge badge-info">PDF
                                     Export</a></td>
                         </tr>
                         @endforeach
