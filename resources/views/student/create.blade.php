@@ -26,8 +26,8 @@
             <br>
             <div class="row">
                 <div class="col-md-6">
-                    {{-- @include('includes.messages') --}}
-                    <form action="{{url('student/store')}}" method="POST">
+                    @include('includes.messages')
+                    <form action="{{route('student.store')}}" method="POST">
                         {{ csrf_field() }}
                         <div class="form-group" {{ $errors->has('studname') ? 'has-error' : ''}}>
                             <label for="name">Student Name</label>

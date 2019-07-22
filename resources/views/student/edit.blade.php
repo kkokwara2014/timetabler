@@ -24,38 +24,26 @@
 
         <div class="container">
             <br>
-            <a href="{{url('student/pdfversion')}}" target="_blank" class="btn btn-danger">Convert to PDF</a>
-            
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped table-responsive">
-                    <caption><h2 style="text-align: center">Student Information</h2></caption>
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Amount</th>
-                            <th scope="col">Action</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @if (count($student)>0)
-                        @foreach ($student as $stud)
-
-                        <tr>
-                            <td>{{$stud->id}}</td>
-                            <td>{{$stud->name}}</td>
-                            <td>{{$stud->amount}}</td>
-                            <td><span class="badge badge-primary"><a href="{{url('student/pdfexport/'.$stud->id)}}" target="_blank">PDF
-                                Export</a></span></td>
-                        </tr>
-                        @endforeach
-                        @else
-                        <td colspan="4">No record found</td>
-                        @endif
-
-                    </tbody>
-                </table>
+            <div class="row">
+                <div class="col-md-6">
+                    @include('includes.messages')
+                    <form action="{{route('student.update')}}" method="POST">
+                        {{ csrf_field() }}
+                        
+                        <div class="form-group" {{ $errors->has('studname') ? 'has-error' : ''}}>
+                            <label for="name">Student Name</label>
+                            <input type="text" class="form-control" id="studname" name="studname"
+                        placeholder="Enter Student Name" value="{{old('studname')}}" autofocus>
+                                {!! $errors->first('studname', '<p style="color: red">:message</p>') !!}
+                        </div>
+                        <div class="form-group" {{ $errors->has('amount') ? 'has-error' : ''}}>
+                            <label for="amount">Amount paid</label>
+                            <input type="text" class="form-control" id="amount" name="amount" placeholder="Amount" value="{{old('amount')}}" maxlength="4">
+                            {!! $errors->first('amount', '<p style="color: red">:message</p>') !!}
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </form>
+                </div>
             </div>
         </div>
 

@@ -51,7 +51,7 @@ class StudentController extends Controller
         $student->save();
 
         // return redirect(route('student.create'));
-        return back()->with('success','Student Created!');
+        return back()->with('success', 'Student with ref: #' . rand(3455,7515)*1515 . ' created succesfully!');
     }
 
     /**
@@ -73,7 +73,8 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        //
+        $stud=Student::find($student);
+        return view('student.edit',['stud'=>$stud]);
     }
 
     /**

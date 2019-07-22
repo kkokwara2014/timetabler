@@ -22,4 +22,5 @@ Route::get('student/pdfexport/{id}','StudentController@pdfexport');
 Route::get('student/pdfversion','StudentController@pdf');
 Route::get('student/create','StudentController@create')->name('student.create');
 Route::post('student/store','StudentController@store')->name('student.store');
+Route::post('student/edit','StudentController@update')->name('student.update');
 
