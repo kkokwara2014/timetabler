@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Mon Jul 22 2019 20:47:31 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* resources/views/student/student.blade.php
+
+
+Created files:
+* .autogit/logs/log-22-6-2019-20-17-15.txt
+
+
+Deleted files:
+
+
+Renamed files:
