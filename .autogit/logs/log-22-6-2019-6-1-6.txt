@@ -1,0 +1,21 @@
+-------------------- Auto-Git Log --------------------
+		Mon Jul 22 2019 06:01:06 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* resources/views/student/student.blade.php
+* routes/web.php
+
+
+Created files:
+* .autogit/logs/log-22-6-2019-5-28-6.txt
+* app/Http/Controllers/StudentController.php
+* app/Student.php
+* database/migrations/2019_07_22_043737_create_students_table.php
+
+
+Deleted files:
+* app/Http/Controllers/DynamicpdfController.php
+
+
+Renamed files:

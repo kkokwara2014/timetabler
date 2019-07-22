@@ -11,11 +11,9 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-Route::get('/','DynamicpdfController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 Route::resource('students','StudentController');
