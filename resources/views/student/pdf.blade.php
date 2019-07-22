@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>{{$stud->name}}</title>
+        <title>{{$student->name}}</title>
 
         <!-- Bootstrap -->
         <!-- Latest compiled and minified CSS -->
@@ -32,14 +32,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($student as $stud)
                         <tr>
-                            <td>{{$stud->id}}</td>
-                            <td>{{$stud->name}}</td>
-                            <td>{{$stud->amount}}</td>
+                            <td>{{$student->id}}</td>
+                            <td>{{$student->name}}</td>
+                            <td>{{$student->amount}}</td>
                         </tr>
-                        @endforeach
-
                     </tbody>
                 </table>
             </div>

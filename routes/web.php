@@ -1,5 +1,5 @@
 <?php
-use Symfony\Component\Routing\Route;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +19,4 @@ Route::get('/', function () {
 
 Route::resource('students','StudentController');
 Route::get('student/pdfexport/{id}','StudentController@pdfexport');
+

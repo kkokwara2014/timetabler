@@ -41,7 +41,8 @@
                             <td>{{$stud->id}}</td>
                             <td>{{$stud->name}}</td>
                             <td>{{$stud->amount}}</td>
-                            <td><a href="{{url('student/pdfexport/'.$stud->id)}}" class="badge badge-info">PDF Export</a></td>
+                            <td><a href="{{url('student/pdfexport/'.$stud->id)}}" class="badge badge-info">PDF
+                                    Export</a></td>
                         </tr>
                         @endforeach
                         @else
