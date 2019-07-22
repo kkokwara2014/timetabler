@@ -6,7 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Student Payment Information</title>
+        <title>{{$stud->name}}</title>
 
         <!-- Bootstrap -->
         <!-- Latest compiled and minified CSS -->
@@ -29,24 +29,16 @@
                             <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Amount</th>
-                            <th scope="col">Action</th>
-
                         </tr>
                     </thead>
                     <tbody>
-                        @if (count($student)>0)
                         @foreach ($student as $stud)
-
                         <tr>
                             <td>{{$stud->id}}</td>
                             <td>{{$stud->name}}</td>
                             <td>{{$stud->amount}}</td>
-                            <td><a href="{{url('student/pdfexport/'.$stud->id)}}" class="badge badge-info">PDF Export</a></td>
                         </tr>
                         @endforeach
-                        @else
-                        <td colspan="4">No record found</td>
-                        @endif
 
                     </tbody>
                 </table>

@@ -1,4 +1,5 @@
 <?php
+use Symfony\Component\Routing\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,3 +18,4 @@ Route::get('/', function () {
 
 
 Route::resource('students','StudentController');
+Route::get('student/pdfexport/{id}','StudentController@pdfexport');
