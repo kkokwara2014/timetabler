@@ -26,7 +26,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        //
+        return view('student.create');
     }
 
     /**
@@ -37,7 +37,19 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name'=>'required',
+            'amount'=>'required',
+        ]);
+        $student=new Student;
+
+        $student->name=$request->studname;
+        $student->amount=$request->amount;
+        $student->created_at=date('Y-m-d');
+        $student->updated_at=date('Y-m-d');
+        $student->save();
+
+        return redirect(route('student.create'));
     }
 
     /**
